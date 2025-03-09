@@ -1,0 +1,239 @@
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+body {
+    line-height:1;
+}
+
+ol,ul {
+    list-style:none;
+}
+
+
+blockquote,q {
+    quotes:none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content:''; 
+    content:none;
+}
+
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* Thiết lập màu nền và font chữ cho trang */
+body {
+    background-color: #333d7b;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Định dạng vùng chứa trò chơi */
+.container {
+    width: 600px;
+    margin: auto;
+    padding: 50px;  
+    position: relative;
+}
+
+/* Khu vực hiển thị lựa chọn của máy tính */
+.computer-area {
+    width: 500px;
+    height: 180px;
+    margin: 5px auto;
+    background-color: #41DFB9;
+    background: linear-gradient(to bottom, #FFF 10%, #41DFB9 100%);
+    position: relative;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+/* Khu vực hiển thị lựa chọn của người chơi */
+.player-area {
+    width: 500px;
+    height: 200px;
+    margin: 5px auto;
+    background-color: #F2BA4A;
+    background: linear-gradient(to bottom, #F2BA4A 5%, #FFF 100%);
+    position: relative;
+}
+
+/* Vùng hiển thị kết quả (thắng, thua, hòa) */
+.info {
+    width:170px;
+    height:60px;
+    position:absolute;
+    left:50%;
+    margin-left:-85px;
+    top:50%;
+    margin-top:-30px;
+    background-color:#21395E;
+    border-radius:30px;
+    z-index:1;
+    text-align:center;
+    line-height:60px;
+    color:#f89bb4;
+    font-size:24px;
+    text-shadow:1px 1px 1px rgba(0,0,0,.3);
+    font-weight:bold;
+}
+
+
+ul {
+    padding-top: 70px;
+    padding-left: 40px;
+}
+
+li {
+    display:inline-block;
+    margin:0 18px;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+/* Hiệu ứng khi người chơi di chuột vào hoặc chọn biểu tượng */
+.scissors,.paper,.rock {
+    transition:.3s;
+    position:relative;
+    top:0;
+    cursor:pointer;
+}
+
+/* Hiệu ứng khi di chuột vào hoặc khi được chọn */
+.scissors:hover,.rock:hover,.paper:hover,.active {
+    box-shadow:0 0 10px 5px #f89bb4;
+}
+
+/* Hiệu ứng khi nhấn vào biểu tượng */
+.scissors:active,.rock:active,.paper:active {
+    top:2px;
+}
+
+
+.game-container {
+    display: flex;                  
+    justify-content: center;        
+    align-items: center;            
+    height: 100vh;                  
+}
+
+/* Định dạng bảng điểm */
+.score-board {
+    text-align: center;            
+    font-size: 18px;               
+    padding: 20px;
+    border-radius: 10px;           
+}
+
+/* Định dạng điểm số */
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #aeda11;
+}
+
+.score p {
+    margin: 0;
+}
+
+/* Màu sắc điểm số */
+.player-score, .computer-score {
+    font-size: 24px;
+    color: #2d82b7;
+    margin-left: 10px;
+}
+
+/* Popup hiển thị thông báo chiến thắng */
+.winner-popup {
+    display: none; /* Ẩn popup mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Lớp nền mờ */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Đảm bảo popup nằm trên cùng */
+}
+
+/* Nội dung popup */
+.popup-content {
+    background-color: #7ddbc9;
+    padding: 50px;
+    border-radius: 80px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề popup */
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Nút trong popup */
+.popup-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hiệu ứng khi rê chuột vào nút */
+.popup-content button:hover {
+    background-color: #45a049;
+}
+
+/* Hiệu ứng hoạt ảnh khi điểm số thay đổi */
+@keyframes pointFly {
+    0% {
+        transform: scale(0) translate(0, 0); /* Bắt đầu từ vị trí nhỏ */
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) translate(20px, -20px); /* Di chuyển và phóng to */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translate(0, 0); /* Dừng lại tại vị trí điểm */
+        opacity: 0;
+    }
+}
+
+/* Định dạng hiệu ứng điểm bay lên */
+.point-animation {
+    position: absolute;
+    font-size: 40px;
+    color: #e71313;
+    font-weight: bold;
+    pointer-events: none; /* Để không cản trở thao tác */
+    animation: pointFly 1s ease forwards; /* Kích hoạt animation */
+}
