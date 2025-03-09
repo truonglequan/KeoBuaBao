@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link type="text/css" rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="img/scissors.png" type="image/png"> 
+    <title>KeoBuaBao</title> 
+</head>
+<body>
+    <div class="winner-popup" id="winnerPopup"> <!-- Cửa sổ popup hiển thị khi có người chiến thắng -->
+        <div class="popup-content">
+            <h2 id="winnerMessage"></h2> <!-- Hiển thị thông báo người thắng -->
+            <button id="restartGameBtn">Bắt đầu lại</button> <!-- Nút để chơi lại -->
+        </div>
+    </div>
+    <div class="container">
+        <div class="computer-area">
+            <img src="img/scissors.png" class="computer-img" alt="computer-img"> 
+            <!-- Khu vực hiển thị lựa chọn của máy tính -->
+        </div>
+        <div class="info"></div> <!-- Vùng chứa thông tin kết quả -->
+        <div class="player-area">
+            <ul>
+                <li><img src="img/scissors.png" class="scissors" alt="scissors"></li>
+                <li><img src="img/paper.png" class="paper" alt="paper"></li>
+                <li><img src="img/rock.png" class="rock" alt="rock"></li>
+                <!-- Các lựa chọn của người chơi: Kéo, Bao, Búa -->
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script> <!-- Liên kết file JavaScript điều khiển trò chơi -->
+    
+    <div class="score-board"> <!-- Bảng điểm -->
+        <div class="score">
+            <p>Điểm bạn: <span class="player-score">0</span></p> 
+            <!-- Hiển thị điểm của người chơi -->
+        </div>
+        <div class="score">
+            <p>Điểm máy: <span class="computer-score">0</span></p> 
+            <!-- Hiển thị điểm của máy tính -->
+        </div>
+    </div>
+</body>
+</html>
